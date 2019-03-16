@@ -1,0 +1,83 @@
+swagger: "2.0"
+info:
+  description: " This is a REST API server for IMDB Movie Collection."
+  version: "1.0.0"
+  title: "IMDB Movies REST Service"
+  contact:
+    email: "syeda.reshmas@gmail.com"
+  license:
+    name: "Hallmark Labs"
+host: "localhost:8025"
+basePath: "/imdb"
+paths:
+  /movies:
+    get:
+      tags:
+      - "movies"
+      summary: "Get IMDB Movies by year and genre"
+      description: "Get IMDB Movies by year and genre. Default Year:2016, Default Genre:None\n
+					Top 10 Movies ranked by rating are returned in sorted order"
+      operationId: "GetMovies"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "year"
+        in: "query"
+        description: "Year (Eg:2015)"
+        required: false
+        type: "string"
+        format: "string"
+      - name: "year_from"
+        in: "query"
+        description: "Year (Eg:2015)"
+        required: false
+        type: "string"
+        format: "string"
+      - name: "year_to"
+        in: "query"
+        description: "Year (Eg:2015)"
+        required: false
+        type: "string"
+        format: "string"
+      - name: "genre"
+        in: "query"
+        description: "Genre (Eg:Adventure)"
+        required: false
+        type: "string"
+        format: "string"
+      responses:
+        200:
+          description: "OK"
+        404:
+          description: "No Content"
+        400:
+          description: "Please provide either the year or a range but not both\n
+                       Please provide a valid year_from and year_to in chronological order\n
+                       Please provide a valid year\n
+                       Please provide a valid genre"
+  /uploadmovies:
+    post:
+      tags:
+      - "movies"
+      summary: "Upload Movies from CSV."
+      description: "Upload Movies from CSV. Duplicates will be ignored"
+      operationId: "PostCSV"
+      consumes:
+      - "text/plain"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "file"
+        description: "CSV File"
+        required: true
+        format: "csv"
+      responses:
+        200:
+          description: "OK"
+        400:
+          description: "File is too large. Maximum upload size is %d Bytes\n
+						Please upload file as multipart/form-data with file as key\n
+                        Invalid File Format\n
+                        Invalid File"
+          

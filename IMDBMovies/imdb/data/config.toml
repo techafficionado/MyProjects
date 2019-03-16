@@ -1,0 +1,12 @@
+[app]
+port = ":8000"
+logdir = "logs/"
+
+[database]
+server = "localhost"
+port   = "27017"
+dbname = "MoviesDB"
+
+[settings]
+defaultyear = 2016
+filesizekb = 2048

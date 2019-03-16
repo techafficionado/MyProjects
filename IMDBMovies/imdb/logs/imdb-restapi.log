@@ -1,0 +1,15 @@
+time="2018-11-05T22:02:58Z" level=info msg="Initialized Logger"
+time="2018-11-05T22:02:58Z" level=info Application Port=":8000"
+time="2018-11-05T22:02:58Z" level=info Database Port=27017
+time="2018-11-05T22:02:58Z" level=info Database Name=MoviesDB
+time="2018-11-05T22:02:58Z" level=info Max File Size KB=2048
+time="2018-11-05T22:02:58Z" level=info Established connection to database=MoviesDB
+time="2018-11-05T22:02:58Z" level=info msg="Server is up and ready"
+time="2018-11-05T23:30:23Z" level=info msg="Initialized Logger"
+time="2018-11-05T23:30:23Z" level=info Application Port=":8000"
+time="2018-11-05T23:30:23Z" level=info Database Port=27017
+time="2018-11-05T23:30:23Z" level=info Database Name=MoviesDB
+time="2018-11-05T23:30:23Z" level=info Max File Size KB=2048
+time="2018-11-05T23:30:23Z" level=info Established connection to database=MoviesDB
+time="2018-11-05T23:30:23Z" level=info msg="Server is up and ready"
+time="2018-11-05T23:30:23Z" level=fatal msg="listen tcp :8000: bind: address already in use"
